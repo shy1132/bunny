@@ -3,7 +3,7 @@ const Writer = require('./writer')
 const constants = require('./constants')
 
 module.exports = {
+    ...constants,
     Reader,
-    Writer,
-    constants
+    Writer
 }
