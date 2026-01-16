@@ -6,5 +6,5 @@
   "keywords": [],
   "author": "shy",
   "license": "MIT",
-  "description": "A simple buffer reader/writer for JavaScript"
+  "description": "a simple buffer reader/writer for JavaScript"
 }
