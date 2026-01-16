@@ -7,7 +7,7 @@ a very simple buffer reader/writer for JavaScript, written with ease-of-use in m
 reading/writing a custom Minecraft Classic level format
 ```js
 const zlib = require('zlib')
-const bunny = require('bunny')
+const bunny = require('@shy1132/bunny')
 
 const levelMagic = 0x11326351;
 const levelVersion = 1;
