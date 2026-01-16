@@ -1,0 +1,36 @@
+name: Publish Package
+
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    publish:
+        runs-on: ubuntu-latest
+
+        permissions:
+            contents: read
+            id-token: write
+            packages: write
+
+        steps:
+            - uses: actions/checkout@v3
+
+            - name: setup node.js
+              uses: actions/setup-node@v3
+              with:
+                  node-version: '20'
+                  registry-url: 'https://registry.npmjs.org'
+
+            - name: authenticate with npm
+              uses: actions/setup-node@v3
+              with:
+                  node-version: '20'
+                  registry-url: 'https://registry.npmjs.org'
+                  scope: '@shy1132'
+                  auth-token: ${{secrets.NPM_TOKEN}}
+
+            - name: publish to npm
+              run: |
+                  npm publish --access public
